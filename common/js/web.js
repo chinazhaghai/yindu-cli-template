@@ -47,9 +47,26 @@ var Page = (function(){
         cdn:$("base").attr("href") || "",
         cache:false,
         shareTitle:'',
-        shareDesc:''
+        shareDesc:'',
+        debug:false
       },config);
+      if(this.debug){
+        var otips = document.createElement("div");
+        $(otips).css({
+          position:"fixed",
+          top:0,
+          left:0,
+          width:"100%",
+          padding:"10px",
+          lineHeight:1.5,
+          backgroundColor:"red",
+          color:"yellow",
+          fontSize:24,
+          zIndex:9999
+        }).text("此页面仅提供测试，上线前请联系程序！");
+        $("body").append(otips);
 
+      }
       this.loadRes();
       this.initPage();
       this.initShareConfig();

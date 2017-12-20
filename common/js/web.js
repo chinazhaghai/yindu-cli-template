@@ -189,7 +189,9 @@ var Page = (function(){
     ** @param:config:Object
     */
     updateShare:function(config){
-      var opt  = Object.assgin(wxdatas,config);
+      var opt  = Object.assign({
+        imgUrl:wxdatas.img_url
+      },wxdatas,config);
       //分享到朋友圈
       wx.onMenuShareTimeline(opt);
       //分享给朋友
